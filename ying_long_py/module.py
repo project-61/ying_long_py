@@ -26,8 +26,9 @@ class Always:
 
 
 class Mod:
-    input: ClassVar[Input] = Input()
-    Output: ClassVar[Output] = Output()
+    name: ClassVar[str]
+    # input: ClassVar[Input] = Input()
+    # Output: ClassVar[Output] = Output()
 
     def initial(self) -> Optional[Initial]:
         return None

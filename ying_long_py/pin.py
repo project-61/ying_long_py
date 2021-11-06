@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from ying_long_py.gen_id import gen_id
 
@@ -85,9 +85,17 @@ class PinMap:
     def __getattribute__(self, name: str) -> Pin:
         return self.map[name]
 
+class IOPin:
+    value: Pin
 
-class Input(PinMap):
-    pass
+    def __init__(self, name: str = gen_id()) -> None:
+        self.value = Pin(name)
 
-class Output(PinMap):
-    pass
+    def get(self) -> Pin:
+        return self.value
+
+class Input(IOPin):
+    ...
+
+class Output(IOPin):
+    ...
