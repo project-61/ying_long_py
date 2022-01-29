@@ -56,6 +56,7 @@ class Op(YLObject):
         else:
             raise TypeError("Invalid type of index")
 
+
 class Wire(Op):
     source: Optional[Op]
     def __init__(self, size: int = 1):
@@ -65,6 +66,9 @@ class Wire(Op):
         assert self.wiresize == other.wiresize
         self.source = other
 
+class Reg(Wire):
+    def __init__(self, size: int = 1):
+        super().__init__(size)
 
 class Bundle(Wire):
     pass

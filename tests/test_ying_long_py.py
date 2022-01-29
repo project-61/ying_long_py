@@ -1,6 +1,7 @@
 from typing import Optional, overload
 from ying_long_py import __version__
 from ying_long_py.datatype import *
+from ying_long_py.modules import *
 
 
 def test_version():
